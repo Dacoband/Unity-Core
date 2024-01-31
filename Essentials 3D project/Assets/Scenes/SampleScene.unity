@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 546875733}
   - component: {fileID: 546875732}
   - component: {fileID: 546875731}
+  - component: {fileID: 546875735}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -224,12 +225,24 @@ Transform:
   m_GameObject: {fileID: 546875730}
   serializedVersion: 2
   m_LocalRotation: {x: -0.4709243, y: -0.5062656, z: 0.546685, w: -0.47229347}
-  m_LocalPosition: {x: -0.07, y: 2.16, z: -0.93}
-  m_LocalScale: {x: -1.7498565, y: -2.9165158, z: 0.4533278}
+  m_LocalPosition: {x: -0.23, y: 2.1, z: -0.91}
+  m_LocalScale: {x: -1.5826927, y: -2.9165158, z: 0.4533278}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 86.723, y: -39.913, z: 223.794}
+--- !u!122 &546875735
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546875730}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4280582710
+  m_Size: 1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,7 +271,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.76862746, g: 0.76862746, b: 0.76862746, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -514,13 +527,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1815378100}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.016099235, y: -0.9437861, z: 0.045206036, w: 0.32705525}
+  m_LocalRotation: {x: -0.006913427, y: -0.98962075, z: 0.047486577, w: 0.1354553}
   m_LocalPosition: {x: 0.10501289, y: 0.8260374, z: -0.6412506}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 4.29, y: -141.645, z: 3.447}
+  m_LocalEulerAnglesHint: {x: 5.285, y: -164.342, z: 1.528}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
