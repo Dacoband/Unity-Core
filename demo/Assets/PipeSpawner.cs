@@ -4,39 +4,29 @@ using UnityEngine;
 
 public class PipeSpawner : MonoBehaviour
 {
-    public GameObject pipePrefab;  // Đối tượng Prefab của Pipe
-    public float spawnInterval = 2f;  // Thời gian giữa các lần sinh Pipe
-    public float pipeHeightOffset = 2f;  // Độ lệch cao độ của Pipe
+    public GameObject pipePrefab;
+    private float countDown;
+    public float timeBetweenSpawns;
+    public bool enableSpawning;
 
     private float timeSinceLastSpawn;
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        timeSinceLastSpawn = 0f;
+       countDown = timeBetweenSpawns;
+        enableSpawning = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Kiểm tra nếu đã đủ thời gian để sinh thêm pipe
-        if (timeSinceLastSpawn >= spawnInterval)
+        if (enableSpawning == true)
         {
-            SpawnPipe();
-            timeSinceLastSpawn = 0f;  // Reset lại thời gian
+            countDown -= Time.deltaTime;
+            if (countDown <= 0)
+            {
+                Instantiate(pipePrefab, new Vector3(10, Random.Range(-1.2f, 2.1f), 0), Quaternion.identity);
+                countDown = timeBetweenSpawns;
+            }
         }
-        else
-        {
-            timeSinceLastSpawn += Time.deltaTime;
-        }
-    }
-
-    public void SpawnPipe()
-    {
-        // Tạo một vị trí ngẫu nhiên cho Pipe mới
-        float randomHeight = Random.Range(-pipeHeightOffset, pipeHeightOffset);
-        Vector3 spawnPosition = new Vector3(transform.position.x, randomHeight, 0);
-
-        // Sinh ra Pipe mới
-        Instantiate(pipePrefab, spawnPosition, Quaternion.identity);
     }
 }
