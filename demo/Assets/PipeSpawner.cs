@@ -24,7 +24,7 @@ public class PipeSpawner : MonoBehaviour
             countDown -= Time.deltaTime;
             if (countDown <= 0)
             {
-                Instantiate(pipePrefab, new Vector3(10, Random.Range(-1.2f, 2.1f), 0), Quaternion.identity);
+                Instantiate(pipePrefab, new Vector3(10, Random.Range(-1.5f, 9.0f), 0), Quaternion.identity);
                 countDown = timeBetweenSpawns;
             }
         }

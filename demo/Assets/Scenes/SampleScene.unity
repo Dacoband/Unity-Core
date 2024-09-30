@@ -184,7 +184,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 45954ec555ac4bf48aef469d4c62087a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b52c682ad42a4be4890cc8f1dfb0fa45, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -205,7 +205,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -263,7 +263,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.6
+  m_Radius: 1.66
 --- !u!50 &202767365
 Rigidbody2D:
   serializedVersion: 4
@@ -279,7 +279,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1126,8 +1126,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pipePrefab: {fileID: 6905206428839126699, guid: 0e61ea6d5acff274bab0b990c1b12f59, type: 3}
-  timeBetweenSpawns: 1.8
-  enableSpawning: 0
+  timeBetweenSpawns: 2
+  enableSpawning: 1
 --- !u!4 &1236936357
 Transform:
   m_ObjectHideFlags: 0
