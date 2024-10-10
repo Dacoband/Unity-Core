@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PipeMoveScript : MonoBehaviour
 {
-    public float moveSpeed = 0.5f;
+    public float moveSpeed = 0.001f;
     // Start is called before the first frame update
     void Start()
     {
