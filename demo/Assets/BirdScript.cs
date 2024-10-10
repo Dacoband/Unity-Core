@@ -17,6 +17,7 @@ public class BirdScript : MonoBehaviour
     private bool isGameOver;
     public TextMeshProUGUI gameOverText;
     public TextMeshProUGUI finalScoreText;
+    [SerializeField] private AudioClip flapSound;
     //public TextMeshProUGUI restartText;
     // Start is called before the first frame update
     void Awake()
@@ -37,23 +38,28 @@ public class BirdScript : MonoBehaviour
     {
         if (!isGameOver)
         {
+            Debug.Log("Flap Strength: " + flapStrenght);
+            Debug.Log("PlaySound Instance: " + PlaySound.instance);
+            Debug.Log("GameObjected: " + gameObjected);
+
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             {
                 myRigidbody.velocity = Vector2.up * flapStrenght;
                 levelStarted = true;
                 welcomeText.gameObject.SetActive(false);
                 myRigidbody.gravityScale = 5;
-                gameObjected.GetComponent<PipeSpawner>().enableSpawning = true;
+                gameObjected.GetComponent<PipeSpawner>().enableSpawning = true; // This might be the line causing the exception
+                PlaySound.instance.PlaySourceSound(flapSound);
             }
         }
-        else 
+        else
         {
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow))
             {
                 ReloadScence();
             }
         }
-        
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

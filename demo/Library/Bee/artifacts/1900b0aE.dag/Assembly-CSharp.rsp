@@ -387,6 +387,7 @@
 "Assets/BirdScript.cs"
 "Assets/PipeMoveScript.cs"
 "Assets/PipeSpawner.cs"
+"Assets/PlaySound.cs"
 -langversion:9.0
 /deterministic
 /optimize+
