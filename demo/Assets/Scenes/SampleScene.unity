@@ -1171,7 +1171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pipePrefab: {fileID: 6905206428839126699, guid: 0e61ea6d5acff274bab0b990c1b12f59, type: 3}
-  timeBetweenSpawns: 0.5
+  timeBetweenSpawns: 1
   enableSpawning: 1
 --- !u!4 &1236936357
 Transform:
