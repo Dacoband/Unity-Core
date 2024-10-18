@@ -1,0 +1,125 @@
+1. BirdScript
+Awake():
+
+Khởi tạo các biến khi bắt đầu game.
+
+myRigidbody lấy thành phần Rigidbody2D để điều khiển chuyển động của chú chim.
+
+Đặt gravityScale của myRigidbody thành 0 để chim không bị rơi xuống ngay khi game chưa bắt đầu.
+=> myRigidbody.gravityScale = 0;
+
+scoreText hiển thị số điểm ban đầu.
+score = 0;
+scoreText.text = score.ToString();
+
+welcomeText hiển thị thông điệp chào mừng khi game bắt đầu.
+
+
+Update():
+
+Khi người chơi nhấn phím Space, W hoặc UpArrow, chú chim sẽ "vỗ cánh" bằng cách đặt vận tốc của myRigidbody theo hướng lên (Vector2.up).
+ Debug.Log("Flap Strength: " + flapStrenght);
+            Debug.Log("PlaySound Instance: " + PlaySound.instance);
+            Debug.Log("GameObjected: " + gameObjected);
+
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                myRigidbody.velocity = Vector2.up * flapStrenght;
+
+Khi bắt đầu game, levelStarted sẽ được set thành true và trọng lực (gravityScale) được bật lên để chim rơi xuống.
+ levelStarted = true;
+                welcomeText.gameObject.SetActive(false);
+                myRigidbody.gravityScale = 5;
+
+Khi game kết thúc (khi isGameOver = true), nếu nhấn Space hoặc UpArrow, hàm ReloadScene() được gọi để load lại cảnh chơi game.
+OnCollisionEnter2D():
+isGameOver = true;
+        myRigidbody.velocity = Vector2.zero;
+        gameObjected.GetComponent<PipeSpawner>().enableSpawning = false;
+
+Khi chú chim va chạm với vật thể khác (như cột), game sẽ kết thúc bằng cách gọi hàm GameOver().
+ gameOverText.gameObject.SetActive(true);
+        finalScoreText.gameObject.SetActive(true);
+        finalScoreText.text = "Final Score: " + score.ToString();
+
+
+GameOver():
+
+Đặt vận tốc của myRigidbody thành Vector2.zero (chú chim ngừng di chuyển) và tắt việc tạo cột mới bằng cách đặt enableSpawning của PipeSpawner thành false.
+Hiển thị điểm số cuối cùng và thông điệp kết thúc game.
+OnTriggerEnter2D():
+
+if (!isGameOver)
+        {
+            score++;
+            scoreText.text = score.ToString();
+        }
+
+Khi chú chim bay qua cột (đi qua collider), điểm số sẽ tăng lên và được cập nhật lên scoreText.
+
+ReloadScence():
+
+Tải lại cảnh game (SampleScene), bắt đầu một lượt chơi mới.
+SceneManager.LoadScene("SampleScene");
+
+
+2. PipeMoveScript
+Xét tốc độ ban đầu cho Pipe
+public float moveSpeed = 0.001f;
+
+Update():
+transform.position = transform.position + (Vector3.left * moveSpeed);
+Di chuyển các ống (pipes) từ phải sang trái bằng cách thay đổi transform.position của game object theo hướng Vector3.left, với tốc độ điều khiển bởi moveSpeed.
+
+ transform.position = transform.position + (Vector3.left * moveSpeed) * Time.deltaTime;
+Time.deltaTime giúp điều chỉnh tốc độ di chuyển phù hợp với tốc độ khung hình.
+
+
+3. PipeSpawner
+Awake():
+
+Đặt thời gian chờ cho việc sinh cột (countDown = timeBetweenSpawns).
+countDown = timeBetweenSpawns;
+        enableSpawning = false;
+enableSpawning được đặt thành false để không sinh cột khi game chưa bắt đầu.
+
+Update():
+
+Khi enableSpawning là true, cột sẽ được tạo ra sau mỗi khoảng thời gian (timeBetweenSpawns) bằng cách sử dụng Instantiate để tạo các cột tại vị trí ngẫu nhiên theo trục Y.
+if (enableSpawning == true)
+        {
+            countDown -= Time.deltaTime;
+            if (countDown <= 0)
+            {
+                Instantiate(pipePrefab, new Vector3(10, Random.Range(-1.5f, 9.0f), 0), Quaternion.identity);
+                countDown = timeBetweenSpawns;
+            }
+pipePrefab: Đây là mẫu (prefab) của cột sẽ được sinh ra.
+new Vector3(10, Random.Range(-1.5f, 9.0f), 0):
+new Vector3(10, y, 0) xác định vị trí sinh ra cột.
+Trục X được cố định tại giá trị 10 (bên phải màn hình), để cột xuất hiện từ ngoài màn hình và di chuyển về phía chú chim.
+Trục Y được gán một giá trị ngẫu nhiên bằng hàm Random.Range(-1.5f, 9.0f), để chiều cao của cột mỗi lần xuất hiện là khác nhau, tạo ra độ khó và sự thay đổi trong trò chơi.
+Trục Z cố định là 0 vì đây là game 2D.
+Quaternion.identity: Đây là giá trị mặc định không xoay của cột khi nó được tạo ra.
+
+
+4. PlaySound
+Awake():
+
+AudioSource được lấy từ game object để phát âm thanh.
+Sử dụng singleton pattern với instance để đảm bảo chỉ có một đối tượng PlaySound được tạo ra và điều khiển âm thanh.
+PlaySourceSound(AudioClip _sound):
+
+ public void PlaySourceSound(AudioClip _sound)
+    {
+        soundSource.PlayOneShot(_sound);
+    }
+
+Phát âm thanh cánh chim vỗ khi người chơi nhấn phím điều khiển.
+
+Link tham khảo: https://github.com/zigurous/unity-flappy-bird-tutorial
+
+Video tham khảo: https://www.bing.com/search?pglt=169&q=flappy+bird+unity&cvid=458227581c05463aa8cc4f13dc9f5a30&gs_lcrp=EgRlZGdlKgYIARAAGEAyBggAEEUYOTIGCAEQABhAMgYIAhAAGEAyBggDEAAYQDIGCAQQABhAMgYIBRAAGEAyBggGEAAYQDIGCAcQABhAMgYICBAAGEDSAQg4NDY1ajBqMagCALACAA&FORM=ANSPA1&PC=CNNDDB
+
+Asset Layout: https://assetstore.unity.com/
+
