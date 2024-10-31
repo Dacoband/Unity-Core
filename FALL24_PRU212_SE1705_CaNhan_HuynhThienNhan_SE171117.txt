@@ -1,3 +1,5 @@
+Cho Bird nhảy cao hơn chỉnh lại Flap Strengh trong inspector 
+
 1. BirdScript
 Awake():
 
