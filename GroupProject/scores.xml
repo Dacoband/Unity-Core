@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<ArrayOfUserScore xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <UserScore>
+    <Name>Nhan</Name>
+    <Score>8200</Score>
+  </UserScore>
+  <UserScore>
+    <Name>Nhan</Name>
+    <Score>8200</Score>
+  </UserScore>
+  <UserScore>
+    <Name>Nhan</Name>
+    <Score>8200</Score>
+  </UserScore>
+  <UserScore>
+    <Name>Nhan</Name>
+    <Score>8200</Score>
+  </UserScore>
+  <UserScore>
+    <Name>Nhan</Name>
+    <Score>8200</Score>
+  </UserScore>
+  <UserScore>
+    <Name>Nhan</Name>
+    <Score>8200</Score>
+  </UserScore>
+  <UserScore>
+    <Name>Nhan</Name>
+    <Score>8200</Score>
+  </UserScore>
+</ArrayOfUserScore>

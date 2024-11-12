@@ -7,11 +7,11 @@
       "RelativeMoniker": "D:0:0:{EB75F287-84E1-790B-224B-31B2EDADE34D}|Assembly-CSharp.csproj|solutionrelative:assets\\birdscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB75F287-84E1-790B-224B-31B2EDADE34D}|Assembly-CSharp.csproj|d:\\fpt_learning\\unity\\unity-core\\alienjumping\\assets\\pipemovescript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EB75F287-84E1-790B-224B-31B2EDADE34D}|Assembly-CSharp.csproj|D:\\FPT_Learning\\Unity\\Unity-Core\\AlienJumping\\assets\\pipemovescript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB75F287-84E1-790B-224B-31B2EDADE34D}|Assembly-CSharp.csproj|solutionrelative:assets\\pipemovescript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB75F287-84E1-790B-224B-31B2EDADE34D}|Assembly-CSharp.csproj|d:\\fpt_learning\\unity\\unity-core\\alienjumping\\assets\\pipespawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EB75F287-84E1-790B-224B-31B2EDADE34D}|Assembly-CSharp.csproj|D:\\FPT_Learning\\Unity\\Unity-Core\\AlienJumping\\assets\\pipespawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB75F287-84E1-790B-224B-31B2EDADE34D}|Assembly-CSharp.csproj|solutionrelative:assets\\pipespawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -22,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 15,
           "Children": [
             {
               "$type": "Bookmark",
@@ -69,6 +69,14 @@
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:6:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "PipeSpawner.cs",
@@ -78,8 +86,7 @@
               "RelativeToolTip": "Assets\\PipeSpawner.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T08:42:41.08Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-17T08:42:41.08Z"
             },
             {
               "$type": "Document",
@@ -91,8 +98,7 @@
               "RelativeToolTip": "Assets\\PipeMoveScript.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAADwvw8AAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T08:39:29.178Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-17T08:39:29.178Z"
             },
             {
               "$type": "Document",
@@ -102,7 +108,7 @@
               "RelativeDocumentMoniker": "Assets\\BirdScript.cs",
               "ToolTip": "D:\\FPT_Learning\\Unity\\Unity-Core\\AlienJumping\\Assets\\BirdScript.cs",
               "RelativeToolTip": "Assets\\BirdScript.cs",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAAAGYAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAAAGUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-17T08:39:13.65Z",
               "EditorCaption": ""

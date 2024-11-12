@@ -20,6 +20,7 @@ public class BirdScript : MonoBehaviour
     public TextMeshProUGUI gameOverText;
     public TextMeshProUGUI finalScoreText;
     [SerializeField] private AudioClip flapSound;
+    public GameObject deathEffectPrefab;
     //public TextMeshProUGUI restartText;
     // Start is called before the first frame update
     void Awake()
@@ -95,6 +96,10 @@ public class BirdScript : MonoBehaviour
         gameOverText.gameObject.SetActive(true);
         finalScoreText.gameObject.SetActive(true);
         finalScoreText.text = "Final Score: " + score.ToString();
+        if (deathEffectPrefab != null)
+        {
+            Instantiate(deathEffectPrefab, transform.position, Quaternion.identity);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
